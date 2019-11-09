@@ -55,7 +55,7 @@ if sys.platform == 'linux':
     NETLINK_W1: int
     NETLINK_XFRM: int
 
-if sys.platform not in {'darwin', 'win32'}:
+if sys.platform != 'win32' and sys.platform != 'darwin':
     # Linux and some BSD support is explicit in docs
     # Windows and macOS do not support in practice
     AF_BLUETOOTH: AddressFamily
@@ -447,9 +447,6 @@ if sys.version_info >= (3, 6):
 
 if sys.platform == 'linux' and sys.version_info >= (3, 8):
     AF_QIPCRTR: AddressFamily
-
-
-
 
 
 # enum versions of above flags py 3.4+
