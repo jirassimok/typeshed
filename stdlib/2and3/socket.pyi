@@ -639,6 +639,7 @@ class socket:
     if sys.platform == 'linux' and sys.version_info >= (3, 6):
         # TODO add the parameter types for sendmsg_afalg
         def sendmsg_afalg(self, msg=..., *, op, iv=..., assoclen=..., flags=...) -> int: ...
+
     if sys.version_info >= (3,):
         # TODO determine legal types for file parameter
         def sendfile(self, file, offset: int = ..., count: Optional[int] = ...) -> int: ...
