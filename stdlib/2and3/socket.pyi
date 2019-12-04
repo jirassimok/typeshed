@@ -693,7 +693,7 @@ if sys.version_info >= (3, 8):
 
 def fromfd(fd: int, family: int, type: int, proto: int = ...) -> socket: ...
 
-if sys.platform == 'win32':
+if sys.platform == 'win32' and sys.version_info >= (3, 3):
     def fromshare(data: bytes) -> socket: ...
 
 # the 5th tuple item is an address
