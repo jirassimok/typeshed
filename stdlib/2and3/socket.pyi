@@ -644,11 +644,12 @@ class socket:
     def sendto(self, data: bytes, address: _Address) -> int: ...
     @overload
     def sendto(self, data: bytes, flags: int, address: _Address) -> int: ...
-    def sendmsg(self,
-                __buffers: Iterable[bytes],
-                __ancdata: Iterable[_CMSG] = ...,
-                __flags: int = ...,
-                __address: _Address = ...) -> int: ...
+    if sys.version_info >= (3, 3):
+        def sendmsg(self,
+                    __buffers: Iterable[bytes],
+                    __ancdata: Iterable[_CMSG] = ...,
+                    __flags: int = ...,
+                    __address: _Address = ...) -> int: ...
     if sys.platform == 'linux' and sys.version_info >= (3, 6):
         # TODO add the parameter types for sendmsg_afalg
         def sendmsg_afalg(self, msg=..., *, op, iv=..., assoclen=..., flags=...) -> int: ...
