@@ -28,7 +28,7 @@ SOCK_RAW: SocketKind
 SOCK_RDM: SocketKind
 SOCK_SEQPACKET: SocketKind
 
-if sys.version_info >= (3,) and sys.platform == 'linux':
+if sys.platform == 'linux' and sys.version_info >= (3,):
     SOCK_CLOEXEC: SocketKind
     SOCK_NONBLOCK: SocketKind
 
